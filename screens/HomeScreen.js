@@ -36,7 +36,7 @@ const HomeScreen = () => {
 
 
       <View>
-        <View>
+        <View className="flex-row space-x-2 flex-1 bg-gray-200 p-3" >
          <SearchIcon/>
          <TextInput placeholder="restaurants and cuisines"
          keyboardType="default"
