@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,6 +10,7 @@ import {ChevronDownIcon,
         AdjustmentsIcon,
         TextInput,
 } from "react-native-heroicons/outline"
+import Categories from '../components/categories';
 
 const HomeScreen = () => {
 
@@ -20,8 +21,8 @@ const HomeScreen = () => {
         });
     },[])
   return (
-    <SafeAreaView>
-      <View className="flex-row pb-3 items-center mx-4 space-x-2">
+    <SafeAreaView className="bg-white pt-5">
+      <View className="flex-row pb-3 items-center mx-4 space-x-2 px-4">
         <Image source={{url:"https://links.papareact.com/wru"}}
         className="h-7 w-7 bg-gray-300 p-4 rounded-full"
         />
@@ -35,18 +36,23 @@ const HomeScreen = () => {
       </View>
 
 
-      <View>
+      <View className="flex-row items-center space-x-2 pb-2 mx-4 px-4">
         <View className="flex-row space-x-2 flex-1 bg-gray-200 p-3" >
-         <SearchIcon/>
+         <SearchIcon color="gray" size={20} />
          <TextInput placeholder="restaurants and cuisines"
          keyboardType="default"
          /> 
         </View>
         <AdjustmentsIcon color="#00CCBB"/>
       </View>
+      <UserIcon size={35} color="#00CCBB"/>
+
+      <ScrollView className="bg-gray-100 flex-1">
+        <Categories/>
+      </ScrollView>
 
     </SafeAreaView>
   )
 }
 
-export default HomeScreen
+export default HomeScreen;
